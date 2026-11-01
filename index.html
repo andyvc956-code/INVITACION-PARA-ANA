@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>INVITACIÓN PARA ANA ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Georgia, serif;
+  text-align: center;
+  color: white;
+  background: linear-gradient(
+    135deg, #1b0c17, #642b43, #210d1a
+  );
+  overflow-x: hidden;
+}
+
+.card {
+  width: 100%;
+  max-width: 450px;
+  padding: 28px 23px;
+  border-radius: 25px;
+  border: 1px solid #e6a9be;
+  background: rgba(255,255,255,0.09);
+  box-shadow: 0 15px 50px #0007;
+  position: relative;
+  z-index: 2;
+}
+
+.screen {
+  display: none;
+  animation: appear 0.8s ease;
+}
+
+.screen.active {
+  display: block;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.photo {
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+  border-radius: 18px;
+  border: 2px solid #e6a9be;
+  margin-bottom: 20px;
+  background: #21101b;
+}
+
+h1 {
+  font-size: 33px;
+  color: #ffd1df;
+  margin: 15px 0;
+}
+
+h2 {
+  color: #ffd1df;
+  font-size: 25px;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.heart {
+  font-size: 45px;
+  animation: beat 1.2s infinite;
+}
+
+@keyframes beat {
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 30px;
+  background: #f2b5c9;
+  color: #471629;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #ffd7e4;
+  transform: scale(1.03);
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid #f2b5c9;
+  color: white;
+}
+
+.details {
+  padding: 20px;
+  margin: 25px 0;
+  border-radius: 18px;
+  border: 1px solid #d99aaf;
+  background: rgba(0,0,0,0.25);
+}
+
+.details strong {
+  color: #ffd1df;
+}
+
+.floating {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  animation: rise 8s linear forwards;
+  z-index: 1;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="card">
+
+<!-- PANTALLA 1: FOTO INICIAL -->
+<section class="screen active" id="s1">
+
+  <img
+    src="JUNTOS.png"
+    class="photo"
+    alt="Nuestra foto juntos"
+  >
+
+  <div class="heart">❤️</div>
+
+  <h1>Hola, ANA</h1>
+
+  <h2>¿Estás preparada? 👀</h2>
+
+  <p>
+    Tengo una pequeña sorpresa para ti.
+    <br><br>
+    Quise hacer algo diferente,
+    algo que no fuera simplemente
+    enviarte un mensaje por WhatsApp.
+    <br><br>
+    Así que preparé este pequeño detalle
+    especialmente para ti.
+    <br><br>
+    ¿Quieres descubrirlo?
+  </p>
+
+  <button onclick="show(2)">
+    ¡SÍ, ESTOY PREPARADA! ❤️
+  </button>
+
+  <button class="secondary" onclick="waitMessage()">
+    Un momentito 🙈
+  </button>
+
+  <p id="wait" hidden>
+    Está bien, te espero. 💕
+  </p>
+
+</section>
+
+
+<!-- PANTALLA 2: CARTA -->
+<section class="screen" id="s2">
+
+  <div class="heart">💌</div>
+
+  <h1>Una invitación especial</h1>
+
+  <p>
+    ANA, este enlace tiene un propósito
+    muy especial...
+    <br><br>
+    Me gustaría invitarte a compartir
+    una cena conmigo.
+    <br><br>
+    Quiero que pasemos una noche agradable,
+    que podamos conversar, reírnos
+    y disfrutar de nuestra compañía.
+    <br><br>
+    Porque más allá del lugar,
+    lo que realmente me ilusiona
+    es poder compartir ese momento contigo.
+    <br><br>
+    Y ahora sí...
+    ¿quieres conocer el plan que preparé? 🌹
+  </p>
+
+  <button onclick="show(3)">
+    DESCUBRIR LA SORPRESA ✨
+  </button>
+
+</section>
+
+
+<!-- PANTALLA 3: DETALLES -->
+<section class="screen" id="s3">
+
+  <div class="heart">🌹</div>
+
+  <h1>Una cena contigo ❤️</h1>
+
+  <p>
+    ANA, me encantaría que podamos
+    compartir una bonita noche juntos.
+    <br><br>
+    Este es el plan que tengo preparado:
+  </p>
+
+  <div class="details">
+
+    <h2>Buenavista Café</h2>
+
+    <p>
+      <strong>📅 FECHA</strong>
+      <br>
+      Domingo 1 de noviembre de 2026
+    </p>
+
+    <p>
+      <strong>🕖 HORA</strong>
+      <br>
+      7:00 p. m.
+    </p>
+
+    <p>
+      <strong>📍 DIRECCIÓN</strong>
+      <br>
+      Mal. de la Marina,
+      Miraflores 15074
+    </p>
+
+  </div>
+
+  <p>
+    No necesitas preparar nada especial.
+    <br><br>
+    Solamente trae tu sonrisa
+    y muchas ganas de pasarla bonito.
+    <br><br>
+    Entonces, ANA...
+    <br><br>
+    ¿Aceptas tener esta cita conmigo? ❤️
+  </p>
+
+  <button onclick="show(4)">
+    ¡SÍ, ACEPTO LA CENA! 💖
+  </button>
+
+  <button class="secondary" onclick="think()">
+    Déjame pensarlo 🙈
+  </button>
+
+  <p id="thinking" hidden>
+    Claro, ANA. Tómate tu tiempo. ❤️
+  </p>
+
+</section>
+
+
+<!-- PANTALLA 4: FOTO FINAL -->
+<section class="screen" id="s4">
+
+  <div class="heart">💖</div>
+
+  <h1>¡TENEMOS UNA CITA!</h1>
+
+  <img
+    src="JUNTOS 2.jpeg"
+    class="photo"
+    alt="Nuestro recuerdo en la catarata"
+  >
+
+  <p>
+    ¡Qué alegría, ANA! 🥰
+    <br><br>
+    Entonces ya tenemos un plan:
+    una buena cena, muchas sonrisas
+    y una noche especial.
+    <br><br>
+    Gracias por aceptar mi invitación.
+    <br><br>
+    Espero que sea uno de esos momentos
+    que recordemos con una sonrisa.
+    <br><br>
+    ¡Nos vemos mañana a las 7:00 p. m.! 🌹
+  </p>
+
+  <button onclick="show(1)">
+    VOLVER AL INICIO ❤️
+  </button>
+
+</section>
+
+</main>
+
+<script>
+
+function show(number) {
+
+  document.querySelectorAll(".screen")
+    .forEach(screen => {
+      screen.classList.remove("active");
+    });
+
+  document.getElementById("s" + number)
+    .classList.add("active");
+
+  window.scrollTo(0, 0);
+
+  if (number === 4) {
+    for (let i = 0; i < 40; i++) {
+      setTimeout(createHeart, i * 100);
+    }
+  }
+}
+
+function waitMessage() {
+  document.getElementById("wait").hidden = false;
+}
+
+function think() {
+  document.getElementById("thinking").hidden = false;
+}
+
+function createHeart() {
+
+  const heart = document.createElement("div");
+
+  heart.className = "floating";
+
+  heart.textContent = ["❤️","💕","🌹","✨","💗"][
+    Math.floor(Math.random() * 5)
+  ];
+
+  heart.style.left = Math.random() * 100 + "vw";
+
+  heart.style.fontSize =
+    (18 + Math.random() * 20) + "px";
+
+  heart.style.animationDuration =
+    (5 + Math.random() * 4) + "s";
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 9000);
+}
+
+setInterval(createHeart, 1200);
+
+</script>
+
+</body>
+</html>
